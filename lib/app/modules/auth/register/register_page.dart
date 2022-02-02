@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/context_extensions.dart';
 import 'package:validatorless/validatorless.dart';
-import '../../../core/ui/app_state.dart';
-import 'register_controller.dart';
 
+import '../../../core/ui/app_state.dart';
 import '../../../core/ui/widgets/custom_app_bar.dart';
 import '../../../core/ui/widgets/custom_text_form_field.dart';
 import '../../../core/ui/widgets/primary_button.dart';
+import 'register_controller.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);

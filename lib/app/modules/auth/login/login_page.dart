@@ -38,8 +38,7 @@ class _LoginPageState extends AppState<LoginPage, LoginController> {
           return SingleChildScrollView(
             child: ConstrainedBox(
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
-              child: SizedBox(
-                height: constraints.maxHeight,
+              child: IntrinsicHeight(
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Form(

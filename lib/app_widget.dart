@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'app/routes/home_routes.dart';
 import 'app/core/bindings/application_binding.dart';
 
 import 'app/core/ui/vakinha_ui.dart';
@@ -18,6 +19,7 @@ class AppWidget extends StatelessWidget {
       getPages: [
         ...SplashRouters.routes,
         ...AuthRoutes.routers,
+        ...HomeRoutes.routers,
       ],
       locale: const Locale('pt', 'BR'),
     );

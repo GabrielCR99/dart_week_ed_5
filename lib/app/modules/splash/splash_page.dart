@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'splash_controller.dart';
 import '../../core/ui/widgets/primary_button.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends GetView<SplashController> {
   const SplashPage({Key? key}) : super(key: key);
 
   @override
@@ -32,7 +33,7 @@ class SplashPage extends StatelessWidget {
                   const SizedBox(height: 60),
                   PrimaryButton(
                     label: 'Acessar',
-                    onPressed: () => Get.toNamed('/auth/login'),
+                    onPressed: () => controller.checkIsLogged(),
                     width: context.widthTransformer(reducedBy: 40),
                     height: 35,
                   ),

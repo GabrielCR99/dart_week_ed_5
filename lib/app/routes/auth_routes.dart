@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
+
 import '../modules/auth/login/login_bindings.dart';
+import '../modules/auth/login/login_page.dart';
 import '../modules/auth/register/register_bindings.dart';
 import '../modules/auth/register/register_page.dart';
-import '../modules/auth/login/login_page.dart';
 
 class AuthRoutes {
   AuthRoutes._();
