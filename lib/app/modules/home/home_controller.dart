@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../core/services/shopping_cart_service.dart';
 import '../../core/services/auth_service.dart';
 import '../menu/menu_page.dart';
 
 class HomeController extends GetxController {
   static const navigatorKey = 1;
+  final ShoppingCartService _service;
+
+  HomeController({required ShoppingCartService service}) : _service = service;
 
   final _tabIndex = 0.obs;
   final _tabs = ['/menu', '/order', '/exit'];
+
+  int get totalProductsInCart => _service.totalProducts;
 
   set tabIndex(int index) {
     _tabIndex(index);
@@ -28,7 +34,14 @@ class HomeController extends GetxController {
           page: () => const MenuPage(),
           transition: Transition.fadeIn,
         );
+      case '/order':
+        return GetPageRoute(
+          settings: settings,
+          page: () => const MenuPage(),
+          transition: Transition.fadeIn,
+        );
       default:
+        return GetPageRoute();
     }
   }
 

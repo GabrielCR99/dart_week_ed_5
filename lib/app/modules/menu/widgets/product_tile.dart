@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:transparent_image/transparent_image.dart';
 import '../../../core/ui/formatter_helper.dart';
 
@@ -15,7 +16,7 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () => Get.toNamed('/product-detail', arguments: product),
       child: Container(
         margin: const EdgeInsets.all(10),
         height: 80,

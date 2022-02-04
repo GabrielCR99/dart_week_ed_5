@@ -6,6 +6,7 @@ class ProductModel {
   String description;
   String image;
   double price;
+
   ProductModel({
     required this.id,
     required this.name,

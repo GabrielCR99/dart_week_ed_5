@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import '../../core/ui/widgets/icon_badge.dart';
 import '../../core/ui/widgets/custom_app_bar.dart';
 import 'home_controller.dart';
 
@@ -14,16 +15,19 @@ class HomePage extends GetView<HomeController> {
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           currentIndex: controller.index,
-          items: const [
-            BottomNavigationBarItem(
+          items: [
+            const BottomNavigationBarItem(
               label: 'Produtos',
               icon: Icon(Icons.list),
             ),
             BottomNavigationBarItem(
               label: 'Carrinho',
-              icon: Icon(Icons.shopping_cart),
+              icon: IconBadge(
+                icon: Icons.shopping_cart,
+                number: controller.totalProductsInCart,
+              ),
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               label: 'Sair',
               icon: Icon(Icons.exit_to_app),
             ),
