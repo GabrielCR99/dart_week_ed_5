@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.roveri.vakinha_burger_mobile">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
    <application
         android:label="vakinha_burger_mobile"
         android:name="${applicationName}"
