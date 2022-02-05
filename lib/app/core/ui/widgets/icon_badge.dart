@@ -14,19 +14,23 @@ class IconBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      clipBehavior: Clip.none,
       children: [
         Icon(icon),
         Visibility(
           visible: number > 0,
           child: Positioned(
-            top: 0,
-            right: 0,
+            top: -5,
+            right: -10,
             child: CircleAvatar(
               maxRadius: 9,
               backgroundColor: Colors.red,
               child: Text(
                 '$number',
-                style: VakinhaUi.boldText.copyWith(fontSize: 9),
+                style: VakinhaUi.boldText.copyWith(
+                  fontSize: 12,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),

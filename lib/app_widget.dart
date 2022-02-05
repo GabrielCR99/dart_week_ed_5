@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'app/routes/orders_routes.dart';
 import 'app/routes/product_routes.dart';
 import 'app/routes/home_routes.dart';
 import 'app/core/bindings/application_binding.dart';
@@ -22,6 +23,7 @@ class AppWidget extends StatelessWidget {
         ...AuthRoutes.routers,
         ...HomeRoutes.routers,
         ...ProductRoutes.routers,
+        ...OrdersRoutes.routers,
       ],
       locale: const Locale('pt', 'BR'),
     );

@@ -11,6 +11,11 @@ class ShoppingCartService extends GetxService {
 
   ShoppingCartModel? getById(int id) => _shoppingCart[id];
 
+  double get totalValue => _shoppingCart.values.fold(
+        0,
+        (totalValue, model) => totalValue += model.product.price * model.amount,
+      );
+
   void addAndRemoveProductInShoppingCart(
     ProductModel product, {
     required int amount,
@@ -28,4 +33,6 @@ class ShoppingCartService extends GetxService {
       );
     }
   }
+
+  void clear() => _shoppingCart.clear();
 }

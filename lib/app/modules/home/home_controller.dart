@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import '../../core/services/shopping_cart_service.dart';
 import '../../core/services/auth_service.dart';
 import '../menu/menu_page.dart';
+import '../order/shopping_cart/shopping_cart_bindings.dart';
+import '../order/shopping_cart/shopping_cart_page.dart';
 
 class HomeController extends GetxController {
   static const navigatorKey = 1;
@@ -11,20 +13,22 @@ class HomeController extends GetxController {
   HomeController({required ShoppingCartService service}) : _service = service;
 
   final _tabIndex = 0.obs;
-  final _tabs = ['/menu', '/order', '/exit'];
+  final _tabs = ['/menu', '/order/shopping_cart', '/exit'];
+  int _lastIndex = 0;
 
   int get totalProductsInCart => _service.totalProducts;
+
+  int get index => _tabIndex.value;
 
   set tabIndex(int index) {
     _tabIndex(index);
     if (_tabs[index] == '/exit') {
       _showDialog();
     } else {
+      _lastIndex = index;
       Get.toNamed(_tabs[index], id: navigatorKey);
     }
   }
-
-  int get index => _tabIndex.value;
 
   Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -32,17 +36,15 @@ class HomeController extends GetxController {
         return GetPageRoute(
           settings: settings,
           page: () => const MenuPage(),
-          transition: Transition.fadeIn,
         );
-      case '/order':
+      case '/order/shopping_cart':
         return GetPageRoute(
           settings: settings,
-          page: () => const MenuPage(),
-          transition: Transition.fadeIn,
+          page: () => ShoppingCartPage(),
+          binding: ShoppingCartBindings(),
         );
-      default:
-        return GetPageRoute();
     }
+    return null;
   }
 
   Future<void> _showDialog() async {
@@ -56,16 +58,14 @@ class HomeController extends GetxController {
             TextButton(
               onPressed: () {
                 Get.back();
-                _tabIndex.value = 0;
+                _tabIndex.value = _lastIndex;
               },
               child: const Text(
                 'Cancelar',
               ),
             ),
             TextButton(
-              onPressed: () {
-                Get.find<AuthService>().logout();
-              },
+              onPressed: () => Get.find<AuthService>().logout(),
               child: const Text(
                 'Sair',
               ),
