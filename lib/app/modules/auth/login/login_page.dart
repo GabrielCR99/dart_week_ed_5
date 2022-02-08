@@ -55,6 +55,7 @@ class _LoginPageState extends AppState<LoginPage, LoginController> {
                         const SizedBox(height: 30),
                         CustomTextFormField(
                           label: 'E-mail',
+                          keyboardType: TextInputType.emailAddress,
                           controller: _emailEC,
                           validator: Validatorless.multiple([
                             Validatorless.required('E-mail obrigatório'),

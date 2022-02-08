@@ -7,9 +7,11 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final FormFieldValidator<String?>? validator;
   final ValueChanged<String?>? onChanged;
+  final TextInputType? keyboardType;
 
   const CustomTextFormField({
     required this.label,
+    this.keyboardType,
     this.onChanged,
     this.validator,
     this.obscureText = false,
@@ -25,6 +27,7 @@ class CustomTextFormField extends StatelessWidget {
       validator: validator,
       onChanged: onChanged,
       cursorColor: context.theme.primaryColor,
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         isDense: true,
         labelText: label,

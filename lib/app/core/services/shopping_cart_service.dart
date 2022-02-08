@@ -11,7 +11,7 @@ class ShoppingCartService extends GetxService {
 
   ShoppingCartModel? getById(int id) => _shoppingCart[id];
 
-  double get totalValue => _shoppingCart.values.fold(
+  double get totalValue => _shoppingCart.values.fold<double>(
         0,
         (totalValue, model) => totalValue += model.product.price * model.amount,
       );

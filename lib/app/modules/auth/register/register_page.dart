@@ -57,12 +57,14 @@ class _RegisterPageState extends AppState<RegisterPage, RegisterController> {
                 const SizedBox(height: 30),
                 CustomTextFormField(
                   label: 'Nome',
+                  keyboardType: TextInputType.name,
                   controller: _nameEC,
                   validator: Validatorless.required('Nome obrigatório'),
                 ),
                 const SizedBox(height: 30),
                 CustomTextFormField(
                   label: 'Email',
+                  keyboardType: TextInputType.emailAddress,
                   controller: _emailEC,
                   validator: Validatorless.multiple([
                     Validatorless.required('E-mail obrigatório'),

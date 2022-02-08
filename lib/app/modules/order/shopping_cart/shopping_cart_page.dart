@@ -23,31 +23,14 @@ class ShoppingCartPage extends GetView<ShoppingCartController> {
               child: IntrinsicHeight(
                 child: Form(
                   key: formKey,
-                  child: Visibility(
-                    visible: controller.products.isNotEmpty,
-                    replacement: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Carrinho',
-                            style: context.textTheme.headline6?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: context.theme.primaryColor,
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          const Text('Nenhum item adicionado no carrinho'),
-                        ],
-                      ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                          child: Row(
+                  child: Obx(
+                    () {
+                      return Visibility(
+                        visible: controller.products.isNotEmpty,
+                        replacement: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'Carrinho',
@@ -56,85 +39,106 @@ class ShoppingCartPage extends GetView<ShoppingCartController> {
                                   color: context.theme.primaryColor,
                                 ),
                               ),
-                              IconButton(
-                                onPressed: controller.clear,
-                                icon: const Icon(
-                                  Icons.delete_outline,
-                                  color: Colors.red,
-                                ),
-                              )
+                              const SizedBox(height: 10),
+                              const Text('Nenhum item adicionado no carrinho'),
                             ],
                           ),
                         ),
-                        Obx(
-                          () => Column(
-                            children: controller.products
-                                .map(
-                                  (p) => Container(
-                                    margin: const EdgeInsets.all(10),
-                                    child: PlusMinusBox(
-                                      label: p.product.name,
-                                      elevated: true,
-                                      backgroundColor: Colors.white,
-                                      amount: p.amount,
-                                      price: p.amount * p.product.price,
-                                      plusCallback: () =>
-                                          controller.addAmountInProduct(p),
-                                      minusCallback: () =>
-                                          controller.removeAmountInProduct(p),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20.0),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Carrinho',
+                                    style:
+                                        context.textTheme.headline6?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: context.theme.primaryColor,
                                     ),
                                   ),
-                                )
-                                .toList(),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Total do pedido',
-                                style: context.textTheme.bodyText1
-                                    ?.copyWith(fontWeight: FontWeight.bold),
+                                  IconButton(
+                                    onPressed: controller.clear,
+                                    icon: const Icon(
+                                      Icons.delete_outline,
+                                      color: Colors.red,
+                                    ),
+                                  )
+                                ],
                               ),
-                              Obx(
-                                () => Text(
-                                  FormatterHelper.format(
-                                    controller.totalValue,
+                            ),
+                            Column(
+                              children: controller.products
+                                  .map(
+                                    (p) => Container(
+                                      margin: const EdgeInsets.all(10),
+                                      child: PlusMinusBox(
+                                        label: p.product.name,
+                                        elevated: true,
+                                        backgroundColor: Colors.white,
+                                        amount: p.amount,
+                                        price: p.amount * p.product.price,
+                                        plusCallback: () =>
+                                            controller.addAmountInProduct(p),
+                                        minusCallback: () =>
+                                            controller.removeAmountInProduct(p),
+                                      ),
+                                    ),
+                                  )
+                                  .toList(),
+                            ),
+                            const SizedBox(height: 10),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Total do pedido',
+                                    style: context.textTheme.bodyText1
+                                        ?.copyWith(fontWeight: FontWeight.bold),
                                   ),
-                                  style: context.textTheme.bodyText1
-                                      ?.copyWith(fontWeight: FontWeight.bold),
+                                  Text(
+                                    FormatterHelper.format(
+                                      controller.totalValue,
+                                    ),
+                                    style: context.textTheme.bodyText1
+                                        ?.copyWith(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const Divider(),
+                            const _AddressField(),
+                            const Divider(),
+                            _CpfField(),
+                            const Divider(),
+                            const Spacer(),
+                            Center(
+                              child: SizedBox(
+                                width: context.widthTransformer(reducedBy: 10),
+                                child: PrimaryButton(
+                                  label: 'FINALIZAR',
+                                  onPressed: () {
+                                    final formValid =
+                                        formKey.currentState?.validate() ??
+                                            false;
+                                    if (formValid) {
+                                      controller.createOrder();
+                                    }
+                                  },
                                 ),
                               ),
-                            ],
-                          ),
-                        ),
-                        const Divider(),
-                        const _AddressField(),
-                        const Divider(),
-                        _CpfField(),
-                        const Divider(),
-                        const Spacer(),
-                        Center(
-                          child: SizedBox(
-                            width: context.widthTransformer(reducedBy: 10),
-                            child: PrimaryButton(
-                              label: 'FINALIZAR',
-                              onPressed: () {
-                                final formValid =
-                                    formKey.currentState?.validate() ?? false;
-                                if (formValid) {
-                                  controller.createOrder();
-                                }
-                              },
                             ),
-                          ),
+                            const SizedBox(height: 10),
+                          ],
                         ),
-                        const SizedBox(height: 10),
-                      ],
-                    ),
+                      );
+                    },
                   ),
                 ),
               ),
