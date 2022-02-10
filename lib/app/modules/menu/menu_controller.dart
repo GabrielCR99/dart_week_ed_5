@@ -63,29 +63,3 @@ class MenuController extends GetxController with LoaderMixin, MessagesMixin {
     }
   }
 }
-
-class Person {
-  final String name;
-  final int age;
-  final double height;
-  final Address address;
-
-  Person({
-    required this.name,
-    required this.age,
-    required this.height,
-    required this.address,
-  });
-}
-
-class Address {
-  String uf;
-  String localidade;
-  String bairro;
-
-  Address({
-    required this.uf,
-    required this.localidade,
-    required this.bairro,
-  });
-}
