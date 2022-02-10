@@ -25,8 +25,10 @@ class HomeController extends GetxController {
     if (_tabs[index] == '/exit') {
       _showDialog();
     } else {
-      _lastIndex = index;
-      Get.toNamed(_tabs[index], id: navigatorKey);
+      if (_lastIndex != index) {
+        _lastIndex = index;
+        Get.toNamed(_tabs[index], id: navigatorKey);
+      }
     }
   }
 

@@ -10,6 +10,7 @@ import './shopping_cart_controller.dart';
 
 class ShoppingCartPage extends GetView<ShoppingCartController> {
   final formKey = GlobalKey<FormState>();
+
   ShoppingCartPage({Key? key}) : super(key: key);
 
   @override
