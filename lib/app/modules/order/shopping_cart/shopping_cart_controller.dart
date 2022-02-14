@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 
 import '../../../core/mixins/loader_mixin.dart';
+import '../../../core/mixins/messages_mixin.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../core/services/shopping_cart_service.dart';
 import '../../../models/order.dart';
@@ -8,16 +11,19 @@ import '../../../models/shopping_cart_model.dart';
 import '../../../repositories/order/order_repository.dart';
 import '../../home/home_controller.dart';
 
-class ShoppingCartController extends GetxController with LoaderMixin {
+class ShoppingCartController extends GetxController
+    with LoaderMixin, MessagesMixin {
   final AuthService _authService;
   final ShoppingCartService _shoppingCartService;
   final OrderRepository _repository;
   final _loading = false.obs;
+  final _message = Rxn<MessageModel>();
 
   @override
   void onInit() {
     super.onInit();
     loaderListener(_loading);
+    messageListener(_message);
   }
 
   ShoppingCartController({
@@ -55,20 +61,32 @@ class ShoppingCartController extends GetxController with LoaderMixin {
   void clear() => _shoppingCartService.clear();
 
   Future<void> createOrder() async {
-    _loading.toggle();
-    final userId = _authService.getUserId();
-    final order = Order(
-      userId: userId!,
-      cpf: _cpf.value,
-      address: _address.value,
-      items: products,
-    );
-    var result = await _repository.createOrder(order);
-    result.copyWith(totalValue: totalValue);
-    clear();
-    _loading.toggle();
-    Get
-      ..offNamed('/orders/finished', arguments: result)
-      ..back(id: HomeController.navigatorKey);
+    try {
+      _loading.toggle();
+      final userId = _authService.getUserId();
+      final order = Order(
+        userId: userId!,
+        cpf: _cpf.value,
+        address: _address.value,
+        items: products,
+      );
+      var result = await _repository.createOrder(order);
+      result.copyWith(totalValue: totalValue);
+      clear();
+      _loading.toggle();
+      Get
+        ..offNamed('/orders/finished', arguments: result)
+        ..back(id: HomeController.navigatorKey);
+    } catch (e, s) {
+      _loading.toggle();
+      log('Erro ao finalizar pedido', error: e, stackTrace: s);
+      _message(
+        MessageModel(
+          title: 'Erro',
+          message: e.toString(),
+          type: MessageType.error,
+        ),
+      );
+    }
   }
 }

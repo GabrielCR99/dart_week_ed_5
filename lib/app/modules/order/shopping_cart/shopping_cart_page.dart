@@ -174,7 +174,7 @@ class _CpfField extends GetView<ShoppingCartController> {
             onChanged: (value) => controller.cpf = value,
             keyboardType: TextInputType.number,
             inputFormatters: [
-              FilteringTextInputFormatter.deny(RegExp(r'\s')),
+              FilteringTextInputFormatter.deny(RegExp(r'^\s')),
               FilteringTextInputFormatter.digitsOnly,
               CpfInputFormatter(),
             ],
@@ -222,7 +222,7 @@ class _AddressField extends GetView<ShoppingCartController> {
             autovalidateMode: AutovalidateMode.onUserInteraction,
             onChanged: (value) => controller.address = value,
             inputFormatters: [
-              FilteringTextInputFormatter.deny(RegExp(r'\s')),
+              FilteringTextInputFormatter.deny(RegExp(r'^\s')),
             ],
             validator: Validatorless.required('Endereço obrigatório'),
             decoration: const InputDecoration(
