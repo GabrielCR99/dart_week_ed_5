@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 class ProductModel {
-  int id;
-  String name;
-  String description;
-  String image;
-  double price;
+  final int id;
+  final String name;
+  final String description;
+  final String image;
+  final double price;
 
-  ProductModel({
+  const ProductModel({
     required this.id,
     required this.name,
     required this.description,

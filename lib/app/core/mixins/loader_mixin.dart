@@ -10,9 +10,7 @@ mixin LoaderMixin on GetxController {
           await Get.dialog(
             WillPopScope(
               onWillPop: () async => false,
-              child: const Center(
-                child: CircularProgressIndicator.adaptive(),
-              ),
+              child: const Center(child: CircularProgressIndicator.adaptive()),
             ),
             barrierDismissible: false,
           );

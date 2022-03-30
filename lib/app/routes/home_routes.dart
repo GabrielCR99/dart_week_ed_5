@@ -12,9 +12,7 @@ class HomeRoutes {
       name: '/home',
       page: () => const HomePage(),
       binding: HomeBindings(),
-      bindings: [
-        MenuBindings(),
-      ],
+      bindings: [MenuBindings()],
     ),
   ];
 }

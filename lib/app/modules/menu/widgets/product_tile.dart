@@ -8,6 +8,7 @@ import '../../../models/product_model.dart';
 
 class ProductTile extends StatelessWidget {
   final ProductModel product;
+
   const ProductTile({
     required this.product,
     Key? key,

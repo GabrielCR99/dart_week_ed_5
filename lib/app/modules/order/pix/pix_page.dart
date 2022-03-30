@@ -14,6 +14,7 @@ class PixPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var qrCode = Uri.parse(_orderPix.image).data;
+
     return Scaffold(
       appBar: CustomAppBar(),
       body: CustomScrollView(

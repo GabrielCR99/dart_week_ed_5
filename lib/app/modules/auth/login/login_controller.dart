@@ -15,9 +15,8 @@ class LoginController extends GetxController with LoaderMixin, MessagesMixin {
   final _loading = false.obs;
   final _message = Rxn<MessageModel>();
 
-  LoginController({
-    required AuthRepository authRepository,
-  }) : _authRepository = authRepository;
+  LoginController({required AuthRepository authRepository})
+      : _authRepository = authRepository;
 
   @override
   void onInit() {

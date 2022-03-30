@@ -36,7 +36,10 @@ class OrderRepositoryImpl implements OrderRepository {
         stackTrace: StackTrace.current,
         error: result.statusText,
       );
-      throw RestClientException('Erro ao realizar pedido');
+      throw RestClientException(
+        'Erro ao realizar pedido',
+        statusCode: result.statusCode,
+      );
     }
 
     return OrderPix.fromMap(result.body);

@@ -1,8 +1,8 @@
 import 'product_model.dart';
 
 class ShoppingCartModel {
+  final ProductModel product;
   int amount;
-  ProductModel product;
 
   ShoppingCartModel({
     required this.amount,

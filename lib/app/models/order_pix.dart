@@ -1,9 +1,9 @@
 class OrderPix {
-  String image;
-  String code;
-  double totalValue;
+  final String image;
+  final String code;
+  final double totalValue;
 
-  OrderPix({
+  const OrderPix({
     required this.image,
     required this.code,
     required this.totalValue,

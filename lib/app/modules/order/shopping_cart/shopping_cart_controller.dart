@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../core/mixins/loader_mixin.dart';
 import '../../../core/mixins/messages_mixin.dart';
+import '../../../core/rest_client/rest_client.dart';
 import '../../../core/services/auth_service.dart';
 import '../../../core/services/shopping_cart_service.dart';
 import '../../../models/order.dart';
@@ -77,13 +78,13 @@ class ShoppingCartController extends GetxController
       Get
         ..offNamed('/orders/finished', arguments: result)
         ..back(id: HomeController.navigatorKey);
-    } catch (e, s) {
+    } on RestClientException catch (e, s) {
       _loading.toggle();
       log('Erro ao finalizar pedido', error: e, stackTrace: s);
       _message(
         MessageModel(
           title: 'Erro',
-          message: e.toString(),
+          message: e.message,
           type: MessageType.error,
         ),
       );

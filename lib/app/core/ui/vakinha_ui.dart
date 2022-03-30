@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class VakinhaUi {
-  VakinhaUi._();
+  const VakinhaUi._();
 
   static final themeData = ThemeData(
     primaryColor: const Color(0xFF007D21),

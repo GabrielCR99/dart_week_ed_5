@@ -10,9 +10,8 @@ import 'auth_repository.dart';
 class AuthRepositoryImpl implements AuthRepository {
   final RestClient _restClient;
 
-  AuthRepositoryImpl({
-    required RestClient restClient,
-  }) : _restClient = restClient;
+  const AuthRepositoryImpl({required RestClient restClient})
+      : _restClient = restClient;
 
   @override
   Future<UserModel> register(String name, String email, String password) async {
@@ -34,7 +33,7 @@ class AuthRepositoryImpl implements AuthRepository {
       throw RestClientException(message);
     }
 
-    return UserModel(
+    return const UserModel(
       1,
       '',
       '',

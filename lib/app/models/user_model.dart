@@ -4,7 +4,7 @@ class UserModel {
   final String email;
   final String password;
 
-  UserModel(this.id, this.name, this.email, this.password);
+  const UserModel(this.id, this.name, this.email, this.password);
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(

@@ -6,6 +6,7 @@ import '../../../models/order_pix.dart';
 
 class FinishedPage extends StatelessWidget {
   final OrderPix _pix = Get.arguments;
+
   FinishedPage({Key? key}) : super(key: key);
 
   @override

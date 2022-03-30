@@ -1,12 +1,12 @@
 import 'shopping_cart_model.dart';
 
 class Order {
-  int userId;
-  String cpf;
-  String address;
-  List<ShoppingCartModel> items;
+  final int userId;
+  final String cpf;
+  final String address;
+  final List<ShoppingCartModel> items;
 
-  Order({
+  const Order({
     required this.userId,
     required this.cpf,
     required this.address,
