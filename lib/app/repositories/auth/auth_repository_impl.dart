@@ -1,7 +1,5 @@
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
-
 import '../../core/exceptions/user_not_found_exception.dart';
 import '../../core/rest_client/rest_client.dart';
 import '../../models/user_model.dart';
@@ -20,8 +18,6 @@ class AuthRepositoryImpl implements AuthRepository {
       'email': email,
       'password': password,
     });
-
-    debugPrint(result.body);
 
     if (result.hasError) {
       var message = 'Erro ao registrar usuário';

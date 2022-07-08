@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import './product_detail_controller.dart';
+import 'product_detail_controller.dart';
 
 class ProductDetailBindings implements Bindings {
   @override

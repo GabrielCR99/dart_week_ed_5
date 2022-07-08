@@ -19,6 +19,7 @@ class AuthService extends GetxService {
       }
     });
     _isLogged(getUserId() != null);
+
     return this;
   }
 

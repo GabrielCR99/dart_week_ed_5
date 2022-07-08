@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import '../modules/splash/splash_bindings.dart';
 import '../modules/splash/splash_page.dart';
 

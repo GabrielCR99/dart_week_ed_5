@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class RestClient extends GetConnect {
-  String projectBaseUrl = 'http://dartweek.academiadoflutter.com.br';
+  String projectBaseUrl = 'https://vakinhaburger-roveri.cloudns.ph';
 
   RestClient() {
     httpClient.baseUrl = projectBaseUrl;

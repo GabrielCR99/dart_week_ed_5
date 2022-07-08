@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:validatorless/validatorless.dart';
+
 import '../../../core/ui/app_state.dart';
-import 'login_controller.dart';
 import '../../../core/ui/vakinha_ui.dart';
-import '../../../core/ui/widgets/primary_button.dart';
-import '../../../core/ui/widgets/custom_text_form_field.dart';
 import '../../../core/ui/widgets/custom_app_bar.dart';
+import '../../../core/ui/widgets/custom_text_form_field.dart';
+import '../../../core/ui/widgets/primary_button.dart';
+import 'login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -79,16 +80,7 @@ class _LoginPageState extends AppState<LoginPage, LoginController> {
                         PrimaryButton(
                           label: 'Entrar',
                           width: context.width,
-                          onPressed: () {
-                            final formValid =
-                                _formKey.currentState?.validate() ?? false;
-                            if (formValid) {
-                              controller.login(
-                                email: _emailEC.text,
-                                password: _passwordEC.text,
-                              );
-                            }
-                          },
+                          onPressed: _onPressedLogin,
                         ),
                         const Spacer(),
                         Row(
@@ -103,7 +95,7 @@ class _LoginPageState extends AppState<LoginPage, LoginController> {
                               ),
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -114,5 +106,15 @@ class _LoginPageState extends AppState<LoginPage, LoginController> {
         },
       ),
     );
+  }
+
+  void _onPressedLogin() {
+    final formValid = _formKey.currentState?.validate() ?? false;
+    if (formValid) {
+      controller.login(
+        email: _emailEC.text,
+        password: _passwordEC.text,
+      );
+    }
   }
 }

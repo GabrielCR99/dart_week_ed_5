@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../vakinha_ui.dart';
 
 class IconBadge extends StatelessWidget {

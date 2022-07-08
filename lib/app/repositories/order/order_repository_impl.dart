@@ -3,7 +3,7 @@ import 'dart:developer';
 import '../../core/rest_client/rest_client.dart';
 import '../../models/order_pix.dart';
 import '../../models/order.dart';
-import './order_repository.dart';
+import 'order_repository.dart';
 
 class OrderRepositoryImpl implements OrderRepository {
   final RestClient _restClient;
@@ -22,11 +22,11 @@ class OrderRepositoryImpl implements OrderRepository {
         'items': order.items
             .map(
               (e) => {
-                'quantity': e.amount,
+                'amount': e.amount,
                 'productId': e.product.id,
               },
             )
-            .toList()
+            .toList(),
       },
     );
 

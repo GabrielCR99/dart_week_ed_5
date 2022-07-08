@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import '../../../repositories/order/order_repository.dart';
 import '../../../repositories/order/order_repository_impl.dart';
-import './shopping_cart_controller.dart';
+import 'shopping_cart_controller.dart';
 
 class ShoppingCartBindings implements Bindings {
   @override

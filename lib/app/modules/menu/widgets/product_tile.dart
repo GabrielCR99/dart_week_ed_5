@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:transparent_image/transparent_image.dart';
-import '../../../core/ui/formatter_helper.dart';
 
+import '../../../core/ui/formatter_helper.dart';
 import '../../../core/ui/vakinha_ui.dart';
 import '../../../models/product_model.dart';
 
@@ -36,7 +36,7 @@ class ProductTile extends StatelessWidget {
                     fit: BoxFit.cover,
                     placeholder: kTransparentImage,
                     image:
-                        'http://dartweek.academiadoflutter.com.br/images/${product.image}',
+                        'https://vakinhaburger-roveri.cloudns.ph/images/${product.image}',
                   ),
                 ),
               ),

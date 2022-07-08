@@ -56,7 +56,7 @@ class FinishedPage extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

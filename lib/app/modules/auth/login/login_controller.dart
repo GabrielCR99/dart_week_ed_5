@@ -2,11 +2,11 @@ import 'dart:developer';
 
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import '../../../core/exceptions/user_not_found_exception.dart';
+
 import '../../../core/constants/constants.dart';
+import '../../../core/exceptions/user_not_found_exception.dart';
 import '../../../core/mixins/loader_mixin.dart';
 import '../../../core/mixins/messages_mixin.dart';
-
 import '../../../repositories/auth/auth_repository.dart';
 
 class LoginController extends GetxController with LoaderMixin, MessagesMixin {

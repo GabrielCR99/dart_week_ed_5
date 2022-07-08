@@ -16,16 +16,16 @@ class AppRoundedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        shape: const CircleBorder(),
+        primary: Colors.white,
+      ),
       child: Text(
         label,
         style: TextStyle(
           color: Colors.grey,
           fontSize: fontSize,
         ),
-      ),
-      style: ElevatedButton.styleFrom(
-        shape: const CircleBorder(),
-        primary: Colors.white,
       ),
     );
   }

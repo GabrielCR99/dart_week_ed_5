@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+
 import '../../models/product_model.dart';
 import '../../models/shopping_cart_model.dart';
 
@@ -27,6 +28,7 @@ class ShoppingCartService extends GetxService {
         product.id,
         (product) {
           product.amount = amount;
+
           return product;
         },
         ifAbsent: () => ShoppingCartModel(amount: amount, product: product),

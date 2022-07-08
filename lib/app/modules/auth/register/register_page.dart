@@ -94,17 +94,7 @@ class _RegisterPageState extends AppState<RegisterPage, RegisterController> {
                 PrimaryButton(
                   label: 'Cadastrar',
                   width: context.width,
-                  onPressed: () {
-                    final formValid =
-                        _formKey.currentState?.validate() ?? false;
-                    if (formValid) {
-                      controller.register(
-                        name: _nameEC.text,
-                        email: _emailEC.text,
-                        password: _passwordEC.text,
-                      );
-                    }
-                  },
+                  onPressed: _onPressedRegister,
                 ),
               ],
             ),
@@ -112,5 +102,16 @@ class _RegisterPageState extends AppState<RegisterPage, RegisterController> {
         ),
       ),
     );
+  }
+
+  void _onPressedRegister() {
+    final formValid = _formKey.currentState?.validate() ?? false;
+    if (formValid) {
+      controller.register(
+        name: _nameEC.text,
+        email: _emailEC.text,
+        password: _passwordEC.text,
+      );
+    }
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../formatter_helper.dart';
 
+import '../formatter_helper.dart';
 import 'app_rounded_button.dart';
 
 class PlusMinusBox extends StatelessWidget {
@@ -29,13 +29,13 @@ class PlusMinusBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: elevated ? 5 : 0,
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: const BorderRadius.all(Radius.circular(20)),
       shadowColor: Colors.black26,
       child: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

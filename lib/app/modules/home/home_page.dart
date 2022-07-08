@@ -1,7 +1,8 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import '../../core/ui/widgets/icon_badge.dart';
+import 'package:get/get.dart';
+
 import '../../core/ui/widgets/custom_app_bar.dart';
+import '../../core/ui/widgets/icon_badge.dart';
 import 'home_controller.dart';
 
 class HomePage extends GetView<HomeController> {

@@ -40,10 +40,7 @@ class PixPage extends StatelessWidget {
                   height: context.heightTransformer(reducedBy: 50),
                 ),
                 TextButton(
-                  onPressed: () {
-                    Clipboard.setData(ClipboardData(text: _orderPix.code));
-                    Get.rawSnackbar(message: 'Código PIX copiado!');
-                  },
+                  onPressed: _onPressedCopyPix,
                   style: TextButton.styleFrom(primary: Colors.grey),
                   child: Text(
                     'PIX Copia e Cola',
@@ -53,12 +50,17 @@ class PixPage extends StatelessWidget {
                       decorationStyle: TextDecorationStyle.dashed,
                     ),
                   ),
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
+  }
+
+  void _onPressedCopyPix() {
+    Clipboard.setData(ClipboardData(text: _orderPix.code));
+    Get.rawSnackbar(message: 'Código PIX copiado!');
   }
 }
