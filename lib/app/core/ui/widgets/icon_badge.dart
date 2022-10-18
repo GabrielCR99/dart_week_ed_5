@@ -9,8 +9,8 @@ class IconBadge extends StatelessWidget {
   const IconBadge({
     required this.number,
     required this.icon,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

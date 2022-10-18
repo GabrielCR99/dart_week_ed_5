@@ -6,12 +6,10 @@ class UserModel {
 
   const UserModel(this.id, this.name, this.email, this.password);
 
-  factory UserModel.fromMap(Map<String, dynamic> map) {
-    return UserModel(
-      map['id']?.toInt() ?? 0,
-      map['name'] ?? '',
-      map['email'] ?? '',
-      map['password'] ?? '',
-    );
-  }
+  factory UserModel.fromMap(Map<String, dynamic> map) => UserModel(
+        map['id']?.toInt() ?? 0,
+        map['name'] ?? '',
+        map['email'] ?? '',
+        map['password'] ?? '',
+      );
 }

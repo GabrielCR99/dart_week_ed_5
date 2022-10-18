@@ -5,12 +5,12 @@ import '../../core/ui/widgets/primary_button.dart';
 import 'splash_controller.dart';
 
 class SplashPage extends GetView<SplashController> {
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: ColoredBox(
         color: const Color(0xFF140E0E),
         child: Stack(
           children: [

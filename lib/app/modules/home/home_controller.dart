@@ -14,12 +14,12 @@ class HomeController extends GetxController {
   HomeController({required ShoppingCartService service}) : _service = service;
 
   final _tabIndex = 0.obs;
-  final _tabs = ['/menu', '/order/shopping_cart', '/exit'];
+  final _tabs = const ['/menu', '/order/shopping_cart', '/exit'];
   int _lastIndex = 0;
 
   int get totalProductsInCart => _service.totalProducts;
 
-  int get index => _tabIndex.value;
+  int get tabIndex => _tabIndex.value;
 
   set tabIndex(int index) {
     _tabIndex(index);
@@ -43,7 +43,7 @@ class HomeController extends GetxController {
       case '/order/shopping_cart':
         return GetPageRoute(
           settings: settings,
-          page: () => ShoppingCartPage(),
+          page: ShoppingCartPage.new,
           binding: ShoppingCartBindings(),
         );
     }

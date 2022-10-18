@@ -6,7 +6,7 @@ import '../../core/ui/widgets/icon_badge.dart';
 import 'home_controller.dart';
 
 class HomePage extends GetView<HomeController> {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class HomePage extends GetView<HomeController> {
       appBar: CustomAppBar(),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
-          currentIndex: controller.index,
+          currentIndex: controller.tabIndex,
           items: [
             const BottomNavigationBarItem(
               label: 'Produtos',

@@ -11,8 +11,8 @@ class ProductTile extends StatelessWidget {
 
   const ProductTile({
     required this.product,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +35,7 @@ class ProductTile extends StatelessWidget {
                     height: 80,
                     fit: BoxFit.cover,
                     placeholder: kTransparentImage,
-                    image:
-                        'https://vakinhaburger-roveri.cloudns.ph/images/${product.image}',
+                    image: 'http://192.168.0.35:8080/images/${product.image}',
                   ),
                 ),
               ),

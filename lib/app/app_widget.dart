@@ -10,7 +10,7 @@ import 'routes/product_routes.dart';
 import 'routes/splash_routers.dart';
 
 class AppWidget extends StatelessWidget {
-  const AppWidget({Key? key}) : super(key: key);
+  const AppWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

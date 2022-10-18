@@ -42,7 +42,10 @@ class ShoppingCartController extends GetxController
 
   List<ShoppingCartModel> get products => _shoppingCartService.products;
 
+  String get address => _address.value;
   set address(String address) => _address.value = address;
+
+  String get cpf => _cpf.value;
   set cpf(String cpf) => _cpf.value = cpf;
 
   void addAmountInProduct(ShoppingCartModel model) {
@@ -71,7 +74,7 @@ class ShoppingCartController extends GetxController
         address: _address.value,
         items: products,
       );
-      var result = await _repository.createOrder(order);
+      final result = await _repository.createOrder(order);
       result.copyWith(totalValue: totalValue);
       clear();
       _loading.toggle();

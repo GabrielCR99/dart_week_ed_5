@@ -9,7 +9,7 @@ class VakinhaUi {
     fontFamily: 'mplus1',
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        primary: const Color(0xFF007D21),
+        backgroundColor: const Color(0xFF007D21),
         textStyle: const TextStyle(fontFamily: 'mplus1'),
       ),
     ),

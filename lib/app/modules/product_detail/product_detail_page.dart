@@ -10,7 +10,7 @@ import '../../core/ui/widgets/primary_button.dart';
 import 'product_detail_controller.dart';
 
 class ProductDetailPage extends GetView<ProductDetailController> {
-  const ProductDetailPage({Key? key}) : super(key: key);
+  const ProductDetailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +34,12 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                       fit: BoxFit.cover,
                       placeholder: kTransparentImage,
                       image:
-                          'https://vakinhaburger-roveri.cloudns.ph/images/${controller.product.image}',
+                          'http://192.168.0.35:8080/images/${controller.product.image}',
                     ),
                   ),
                   const SizedBox(height: 10),
                   Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(20),
                     child: Text(
                       controller.product.name,
                       style: context.textTheme.headline4!.copyWith(
@@ -49,7 +49,7 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
+                    padding: const EdgeInsets.only(left: 20),
                     child: Text(
                       controller.product.description,
                       style: context.textTheme.bodyText2,

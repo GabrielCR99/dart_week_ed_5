@@ -8,11 +8,11 @@ class OrdersRoutes {
   static final routers = <GetPage>[
     GetPage(
       name: '/orders/finished',
-      page: () => FinishedPage(),
+      page: FinishedPage.new,
     ),
     GetPage(
       name: '/orders/pix',
-      page: () => PixPage(),
+      page: PixPage.new,
     ),
   ];
 }

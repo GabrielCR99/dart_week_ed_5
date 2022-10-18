@@ -1,8 +1,9 @@
 import 'package:brasil_fields/brasil_fields.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:flutter/material.dart';
 import 'package:validatorless/validatorless.dart';
+
 import '../../../core/ui/formatter_helper.dart';
 import '../../../core/ui/widgets/plus_minus_box.dart';
 import '../../../core/ui/widgets/primary_button.dart';
@@ -11,7 +12,7 @@ import 'shopping_cart_controller.dart';
 class ShoppingCartPage extends GetView<ShoppingCartController> {
   final formKey = GlobalKey<FormState>();
 
-  ShoppingCartPage({Key? key}) : super(key: key);
+  ShoppingCartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class ShoppingCartPage extends GetView<ShoppingCartController> {
                     () => Visibility(
                       visible: controller.products.isNotEmpty,
                       replacement: Padding(
-                        padding: const EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.all(20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -48,8 +49,7 @@ class ShoppingCartPage extends GetView<ShoppingCartController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Row(
                               children: [
                                 Text(
@@ -91,7 +91,7 @@ class ShoppingCartPage extends GetView<ShoppingCartController> {
                           ),
                           const SizedBox(height: 10),
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
+                            padding: const EdgeInsets.all(20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -195,7 +195,7 @@ class _CpfField extends GetView<ShoppingCartController> {
 }
 
 class _AddressField extends GetView<ShoppingCartController> {
-  const _AddressField({Key? key}) : super(key: key);
+  const _AddressField();
 
   @override
   Widget build(BuildContext context) {

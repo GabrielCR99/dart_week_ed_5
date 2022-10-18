@@ -13,11 +13,12 @@ class ProductRepositoryImpl implements ProductRepository {
     final result = await _restClient.get<List>('/products/');
 
     if (result.hasError) {
-      throw RestClientException('Erro ao buscar produtos');
+      throw const RestClientException('Erro ao buscar produtos');
     }
 
     return result.body!
-        .map<ProductModel>((e) => ProductModel.fromMap(e))
+        .cast<Map<String, dynamic>>()
+        .map<ProductModel>(ProductModel.fromMap)
         .toList();
   }
 }

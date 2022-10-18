@@ -7,7 +7,7 @@ class ApplicationBinding implements Bindings {
   @override
   void dependencies() {
     Get
-      ..lazyPut(() => RestClient(), fenix: true)
-      ..lazyPut(() => ShoppingCartService());
+      ..lazyPut(RestClient.new, fenix: true)
+      ..lazyPut(ShoppingCartService.new);
   }
 }

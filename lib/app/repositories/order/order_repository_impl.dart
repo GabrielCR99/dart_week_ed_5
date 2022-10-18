@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import '../../core/rest_client/rest_client.dart';
-import '../../models/order_pix.dart';
 import '../../models/order.dart';
+import '../../models/order_pix.dart';
 import 'order_repository.dart';
 
 class OrderRepositoryImpl implements OrderRepository {
@@ -13,7 +13,7 @@ class OrderRepositoryImpl implements OrderRepository {
 
   @override
   Future<OrderPix> createOrder(Order order) async {
-    final result = await _restClient.post(
+    final result = await _restClient.post<Map<String, dynamic>>(
       '/order/',
       {
         'userId': order.userId,
@@ -42,6 +42,6 @@ class OrderRepositoryImpl implements OrderRepository {
       );
     }
 
-    return OrderPix.fromMap(result.body);
+    return OrderPix.fromMap(result.body!);
   }
 }

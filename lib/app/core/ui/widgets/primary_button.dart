@@ -13,8 +13,8 @@ class PrimaryButton extends StatelessWidget {
     this.color,
     this.width,
     this.height = 50,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class PrimaryButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           shape: const StadiumBorder(),
-          primary: color,
+          backgroundColor: color,
         ),
         child: Text(
           label,

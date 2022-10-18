@@ -9,11 +9,11 @@ import '../../../models/order_pix.dart';
 class PixPage extends StatelessWidget {
   final OrderPix _orderPix = Get.arguments;
 
-  PixPage({Key? key}) : super(key: key);
+  PixPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var qrCode = Uri.parse(_orderPix.image).data;
+    final qrCode = Uri.parse(_orderPix.image).data;
 
     return Scaffold(
       appBar: CustomAppBar(),
@@ -41,7 +41,7 @@ class PixPage extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: _onPressedCopyPix,
-                  style: TextButton.styleFrom(primary: Colors.grey),
+                  style: TextButton.styleFrom(foregroundColor: Colors.grey),
                   child: Text(
                     'PIX Copia e Cola',
                     style: context.textTheme.headline4?.copyWith(

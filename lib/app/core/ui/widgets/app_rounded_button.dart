@@ -9,8 +9,8 @@ class AppRoundedButton extends StatelessWidget {
     required this.onPressed,
     required this.label,
     this.fontSize = 25.0,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class AppRoundedButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
-        primary: Colors.white,
+        backgroundColor: Colors.white,
       ),
       child: Text(
         label,

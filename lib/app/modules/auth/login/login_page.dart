@@ -10,7 +10,7 @@ import '../../../core/ui/widgets/primary_button.dart';
 import 'login_controller.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -18,15 +18,14 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends AppState<LoginPage, LoginController> {
   final _formKey = GlobalKey<FormState>();
-
   final _emailEC = TextEditingController();
   final _passwordEC = TextEditingController();
 
   @override
   void dispose() {
-    super.dispose();
     _emailEC.dispose();
     _passwordEC.dispose();
+    super.dispose();
   }
 
   @override
@@ -41,7 +40,7 @@ class _LoginPageState extends AppState<LoginPage, LoginController> {
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
               child: IntrinsicHeight(
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20),
                   child: Form(
                     key: _formKey,
                     child: Column(

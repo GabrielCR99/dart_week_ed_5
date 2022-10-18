@@ -4,8 +4,5 @@ class ShoppingCartModel {
   final ProductModel product;
   int amount;
 
-  ShoppingCartModel({
-    required this.amount,
-    required this.product,
-  });
+  ShoppingCartModel({required this.amount, required this.product});
 }

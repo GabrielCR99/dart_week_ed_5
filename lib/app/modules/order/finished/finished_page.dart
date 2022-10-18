@@ -7,7 +7,7 @@ import '../../../models/order_pix.dart';
 class FinishedPage extends StatelessWidget {
   final OrderPix _pix = Get.arguments;
 
-  FinishedPage({Key? key}) : super(key: key);
+  FinishedPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class FinishedPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     'Pedido realizado com sucesso',
                     textAlign: TextAlign.center,

@@ -10,7 +10,7 @@ import '../../../core/ui/widgets/primary_button.dart';
 import 'register_controller.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  const RegisterPage({super.key});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -18,17 +18,16 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends AppState<RegisterPage, RegisterController> {
   final _formKey = GlobalKey<FormState>();
-
   final _nameEC = TextEditingController();
   final _emailEC = TextEditingController();
   final _passwordEC = TextEditingController();
 
   @override
   void dispose() {
-    super.dispose();
     _nameEC.dispose();
     _emailEC.dispose();
     _passwordEC.dispose();
+    super.dispose();
   }
 
   @override
@@ -38,7 +37,7 @@ class _RegisterPageState extends AppState<RegisterPage, RegisterController> {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20),
           child: Form(
             key: _formKey,
             child: Column(

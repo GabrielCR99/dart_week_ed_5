@@ -22,8 +22,8 @@ class PlusMinusBox extends StatelessWidget {
     this.backgroundColor,
     this.label,
     this.calculateTotal = false,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
