@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
 import 'core/bindings/application_binding.dart';
@@ -26,6 +27,11 @@ class AppWidget extends StatelessWidget {
         ...OrdersRoutes.routers,
       ],
       locale: const Locale('pt', 'BR'),
+      supportedLocales: const [Locale('pt', 'BR')],
+      localizationsDelegates: const [
+        ...GlobalMaterialLocalizations.delegates,
+        DefaultCupertinoLocalizations.delegate,
+      ],
     );
   }
 }
