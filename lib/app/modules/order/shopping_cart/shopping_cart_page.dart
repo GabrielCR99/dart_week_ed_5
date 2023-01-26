@@ -35,7 +35,7 @@ class ShoppingCartPage extends GetView<ShoppingCartController> {
                           children: [
                             Text(
                               'Carrinho',
-                              style: context.textTheme.headline6?.copyWith(
+                              style: context.textTheme.titleLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: context.theme.primaryColor,
                               ),
@@ -54,7 +54,7 @@ class ShoppingCartPage extends GetView<ShoppingCartController> {
                               children: [
                                 Text(
                                   'Carrinho',
-                                  style: context.textTheme.headline6?.copyWith(
+                                  style: context.textTheme.titleLarge?.copyWith(
                                     fontWeight: FontWeight.bold,
                                     color: context.theme.primaryColor,
                                   ),
@@ -97,14 +97,14 @@ class ShoppingCartPage extends GetView<ShoppingCartController> {
                               children: [
                                 Text(
                                   'Total do pedido',
-                                  style: context.textTheme.bodyText1
+                                  style: context.textTheme.bodyLarge
                                       ?.copyWith(fontWeight: FontWeight.bold),
                                 ),
                                 Text(
                                   FormatterHelper.format(
                                     controller.totalValue,
                                   ),
-                                  style: context.textTheme.bodyText1
+                                  style: context.textTheme.bodyLarge
                                       ?.copyWith(fontWeight: FontWeight.bold),
                                 ),
                               ],

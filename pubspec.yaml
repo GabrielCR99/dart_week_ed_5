@@ -6,10 +6,10 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.18.2 <3.0.0"
+  sdk: ">=2.19.0 <3.0.0"
 
 dependencies:
-  brasil_fields: ^1.6.0
+  brasil_fields: ^1.9.0
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -21,7 +21,7 @@ dependencies:
   validatorless: ^1.2.3
 
 dev_dependencies:
-  dart_code_metrics: ^4.21.2
+  dart_code_metrics: ^5.5.0
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter

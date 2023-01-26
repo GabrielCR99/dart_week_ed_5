@@ -47,7 +47,7 @@ class _LoginPageState extends AppState<LoginPage, LoginController> {
                       children: [
                         Text(
                           'Login',
-                          style: context.textTheme.headline6?.copyWith(
+                          style: context.textTheme.titleLarge?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: context.theme.primaryColorDark,
                           ),

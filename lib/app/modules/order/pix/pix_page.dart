@@ -25,11 +25,11 @@ class PixPage extends StatelessWidget {
               children: [
                 Text(
                   'Valor a pagar',
-                  style: context.textTheme.headline4,
+                  style: context.textTheme.headlineMedium,
                 ),
                 Text(
                   FormatterHelper.format(_orderPix.totalValue),
-                  style: context.textTheme.headline4?.copyWith(
+                  style: context.textTheme.headlineMedium?.copyWith(
                     color: context.theme.primaryColorDark,
                     fontWeight: FontWeight.bold,
                   ),
@@ -44,7 +44,7 @@ class PixPage extends StatelessWidget {
                   style: TextButton.styleFrom(foregroundColor: Colors.grey),
                   child: Text(
                     'PIX Copia e Cola',
-                    style: context.textTheme.headline4?.copyWith(
+                    style: context.textTheme.headlineMedium?.copyWith(
                       fontSize: 30,
                       decoration: TextDecoration.underline,
                       decorationStyle: TextDecorationStyle.dashed,

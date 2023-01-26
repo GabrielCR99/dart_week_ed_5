@@ -42,7 +42,7 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                     padding: const EdgeInsets.all(20),
                     child: Text(
                       controller.product.name,
-                      style: context.textTheme.headline4!.copyWith(
+                      style: context.textTheme.headlineMedium!.copyWith(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
@@ -52,7 +52,7 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                     padding: const EdgeInsets.only(left: 20),
                     child: Text(
                       controller.product.description,
-                      style: context.textTheme.bodyText2,
+                      style: context.textTheme.bodyMedium,
                     ),
                   ),
                   const SizedBox(height: 20),

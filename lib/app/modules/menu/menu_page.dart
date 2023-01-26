@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'menu_controller.dart';
+import 'menu_controller.dart' as app_menu;
 import 'widgets/product_tile.dart';
 
-class MenuPage extends GetView<MenuController> {
+class MenuPage extends GetView<app_menu.MenuController> {
   const MenuPage({super.key});
 
   @override

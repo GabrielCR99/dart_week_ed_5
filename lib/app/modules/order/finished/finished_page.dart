@@ -31,7 +31,7 @@ class FinishedPage extends StatelessWidget {
                   child: Text(
                     'Pedido realizado com sucesso',
                     textAlign: TextAlign.center,
-                    style: context.textTheme.headline6
+                    style: context.textTheme.titleLarge
                         ?.copyWith(color: context.theme.primaryColorDark),
                   ),
                 ),
